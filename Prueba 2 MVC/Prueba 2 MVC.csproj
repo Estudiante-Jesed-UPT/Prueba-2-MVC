@@ -122,6 +122,8 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="IMG\imagenLogo.png" />
+    <Content Include="IMG\Lgo ASFIES.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -144,6 +146,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Context\Model1.cs" />
+    <Compile Include="Migrations\202210201930524_migracion1.cs" />
+    <Compile Include="Migrations\202210201930524_migracion1.designer.cs">
+      <DependentUpon>202210201930524_migracion1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Perros.cs" />
     <Compile Include="Models\Razas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -188,6 +196,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Razas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202210201930524_migracion1.resx">
+      <DependentUpon>202210201930524_migracion1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

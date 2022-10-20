@@ -1,47 +1,53 @@
-﻿@model Prueba_2_MVC.Models.Perros
+﻿
+@model Prueba_2_MVC.Models.Perros
 
 @{
     ViewBag.Title = "Index";
- }
+    ViewData["Title"] = "Index";
+}
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Perros</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+
+
+
+<div>
+    <div class="p-2" style="background-color: rgba(0, 32, 96, 1);">
+        <h5 class="text-light text-center">Antes de continuar unas breves preguntas</h5>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="input-group mt-5">
+                <label class="input-group-text" style="background-color: rgba(142, 169, 219, 1);">Nombre</label>
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control rounded-end" } })
+                @Html.ValidationMessageFor(model => model.Name, " ", new { @class = "text-danger" })
+            </div>
+
+            <div class="input-group mt-4">
+                <label class="input-group-text" style="background-color: rgba(142, 169, 219, 1);">Edad</label>
                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Edad, " ", new { @class = "text-danger" })
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Edad, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Edad, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Edad, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TipoRazaID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="input-group mt-4">
+                <label class="input-group-text" style="background-color: rgba(142, 169, 219, 1);">Tipo de raza</label>
                 @Html.EditorFor(model => model.TipoRazaID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TipoRazaID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                @Html.ValidationMessageFor(model => model.Edad, " ", new { @class = "text-danger" })
             </div>
         </div>
     </div>
+
+
+
+   
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
 }
 
 <div>
